@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: aqua;
 }
 
-.App-link {
-  color: #61dafb;
+.carousel {
+  position: relative;
+  width: 80%;
+  height: 65vh;
+  background-color: antiquewhite;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.arrow {
+  font-size: 2.5rem;
+}
+
+.image {
+  width: 100%;
+  min-height: 85%;
+  border-radius: 10px;
+}
+
+.left-image {
+  width: 250px;
+  height: 350px;
+}
+
+.front-image {
+  width: 300px;
+  height: 400px;
+}
+
+.right-image {
+  width: 250px;
+  height: 350px;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  text-align: center;
+  width: 100%;
+  height: 15%;
+  margin: 0;
+  padding: 0;
+  background-color: aquamarine;
+}
+
+.imageDiv {
+  position: absolute;
+  transition: all 1s;
+}
+
+.right-image-animation {
+  transform: translateX(-120%) scale(120%);
+}
+
+.simple-div {
+  color: black;
+  background-color: green;
+  font-size: 30px;
+}
+
+.simple-div:active {
+  color: red;
 }
