@@ -10,7 +10,7 @@
 
 .carousel {
   position: relative;
-  width: 80%;
+  width: 85%;
   height: 65vh;
   background-color: antiquewhite;
   overflow: hidden;
@@ -24,55 +24,8 @@
 }
 
 .image {
-  width: 100%;
-  min-height: 85%;
-  border-radius: 10px;
-}
-
-.left-image {
-  width: 250px;
-  height: 350px;
-}
-
-.front-image {
+  position: absolute;
   width: 300px;
   height: 400px;
-}
-
-.right-image {
-  width: 250px;
-  height: 350px;
-}
-
-.image-container {
-  width: 100%;
-  height: 100%;
-}
-
-.text {
-  text-align: center;
-  width: 100%;
-  height: 15%;
-  margin: 0;
-  padding: 0;
-  background-color: aquamarine;
-}
-
-.imageDiv {
-  position: absolute;
-  transition: all 1s;
-}
-
-.right-image-animation {
-  transform: translateX(-120%) scale(120%);
-}
-
-.simple-div {
-  color: black;
-  background-color: green;
-  font-size: 30px;
-}
-
-.simple-div:active {
-  color: red;
+  border-radius: 10px;
 }

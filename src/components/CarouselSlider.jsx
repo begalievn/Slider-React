@@ -44,7 +44,7 @@ function CarouselSlider({ children }) {
           className={
             isButtonClicked
               ? "right-image imageDiv right-image-animation"
-              : "imageDiv right-image "
+              : "imageDiv right-image test"
           }
         >
           {children.map((item, index) =>
