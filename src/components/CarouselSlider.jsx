@@ -81,7 +81,9 @@ function CarouselSlider({ children, transitionSpeed = 300 }) {
             return (
               <div
                 key={index}
-                className={`imageDiv ${index === current + 1 ? "active" : ""}`}
+                className={`imageDiv ${index === current + 1 ? "active" : ""} ${
+                  hasTransitionClass ? "transition" : ""
+                }`}
               >
                 {item}
               </div>
