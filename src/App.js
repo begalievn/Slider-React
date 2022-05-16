@@ -15,46 +15,19 @@ function App() {
           src="https://media.istockphoto.com/photos/door-to-office-picture-id178842131?b=1&k=20&m=178842131&s=170667a&w=0&h=45iCO1nO7rvQS8NITsFmh4XQ_nIJfZ3-MVyP82ythdg="
           alt="building"
         />
-
         <img
           className="image"
-          src="https://media.istockphoto.com/photos/office-building-with-blue-windows-picture-id133906722?b=1&k=20&m=133906722&s=170667a&w=0&h=aHwRFIq-qKP7lkdfuHhQof0EVSr6KD5WOvotB5RXHwA="
-          alt="building"
-        />
-
-        <img
-          className="image"
-          src="https://media.istockphoto.com/photos/modern-white-office-entrance-door-picture-id1166218092?b=1&k=20&m=1166218092&s=170667a&w=0&h=ur-gKb50JRfBMahKo9AgZ5GtXY1H-lIZIq4WIr5WoHw="
+          src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1aWxkaW5nc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
           alt="building"
         />
         <img
           className="image"
-          src="https://media.istockphoto.com/photos/modern-white-office-entrance-door-picture-id1166218092?b=1&k=20&m=1166218092&s=170667a&w=0&h=ur-gKb50JRfBMahKo9AgZ5GtXY1H-lIZIq4WIr5WoHw="
+          src="https://media.istockphoto.com/photos/green-building-picture-id1329757808?b=1&k=20&m=1329757808&s=170667a&w=0&h=lhgX-lhkYxeHMJ5yM8X4DjpkR863NC_DFRP3FdU95r8="
           alt="building"
         />
         <img
           className="image"
-          src="https://media.istockphoto.com/photos/modern-white-office-entrance-door-picture-id1166218092?b=1&k=20&m=1166218092&s=170667a&w=0&h=ur-gKb50JRfBMahKo9AgZ5GtXY1H-lIZIq4WIr5WoHw="
-          alt="building"
-        />
-        <img
-          className="image"
-          src="https://media.istockphoto.com/photos/modern-white-office-entrance-door-picture-id1166218092?b=1&k=20&m=1166218092&s=170667a&w=0&h=ur-gKb50JRfBMahKo9AgZ5GtXY1H-lIZIq4WIr5WoHw="
-          alt="building"
-        />
-        <img
-          className="image"
-          src="https://media.istockphoto.com/photos/modern-white-office-entrance-door-picture-id1166218092?b=1&k=20&m=1166218092&s=170667a&w=0&h=ur-gKb50JRfBMahKo9AgZ5GtXY1H-lIZIq4WIr5WoHw="
-          alt="building"
-        />
-        <img
-          className="image"
-          src="https://media.istockphoto.com/photos/modern-white-office-entrance-door-picture-id1166218092?b=1&k=20&m=1166218092&s=170667a&w=0&h=ur-gKb50JRfBMahKo9AgZ5GtXY1H-lIZIq4WIr5WoHw="
-          alt="building"
-        />
-        <img
-          className="image"
-          src="https://media.istockphoto.com/photos/modern-white-office-entrance-door-picture-id1166218092?b=1&k=20&m=1166218092&s=170667a&w=0&h=ur-gKb50JRfBMahKo9AgZ5GtXY1H-lIZIq4WIr5WoHw="
+          src="https://images.unsplash.com/photo-1486175060817-5663aacc6655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJ1aWxkaW5nc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
           alt="building"
         />
       </CarouselSlider>
