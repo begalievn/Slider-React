@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 function CarouselSlider({ children, transitionSpeed = 300 }) {
-  const [current, setCurrent] = useState(2);
+  const [current, setCurrent] = useState(1);
   const [stateSlides, setStateSlides] = useState(children);
   const [hasTransitionClass, setHasTransitionClass] = useState(true);
   const [leftAndRightDisabled, setLeftAndRightDisabled] = useState(false);
@@ -79,7 +79,10 @@ function CarouselSlider({ children, transitionSpeed = 300 }) {
         >
           {stateSlides.map((item, index) => {
             return (
-              <div key={index} className="imageDiv">
+              <div
+                key={index}
+                className={`imageDiv ${index === current + 1 ? "active" : ""}`}
+              >
                 {item}
               </div>
             );
