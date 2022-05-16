@@ -2,66 +2,94 @@ import { useState, useEffect } from "react";
 
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
-function CarouselSlider({ children }) {
-  const [current, setCurrent] = useState(0);
-  const [isButtonClicked, setButtonClicked] = useState(false);
+function CarouselSlider({ children, transitionSpeed = 300 }) {
+  const [current, setCurrent] = useState(2);
+  const [stateSlides, setStateSlides] = useState(children);
+  const [hasTransitionClass, setHasTransitionClass] = useState(true);
+  const [leftAndRightDisabled, setLeftAndRightDisabled] = useState(false);
 
-  const length = children.length;
+  useEffect(() => {
+    const slidesWithClones = [...children];
+    slidesWithClones.unshift(slidesWithClones[slidesWithClones.length - 1]);
+    slidesWithClones.push(slidesWithClones[1]);
+    setStateSlides(slidesWithClones);
+  }, []);
 
-  // useEffect(() => {
-  //   setButtonClicked(false);
-  //   console.log("useEffect affected");
-  // }, [isButtonClicked]);
+  useEffect(() => {
+    if (current === stateSlides.length - 1) {
+      setLeftAndRightDisabled(true);
+      setTimeout(() => {
+        setHasTransitionClass(false);
+        setCurrent(2);
+      }, transitionSpeed);
+    }
 
-  console.log(isButtonClicked);
+    if (current === 2) {
+      setTimeout(() => {
+        setHasTransitionClass(true);
+      }, transitionSpeed);
+    }
+
+    if (current === 0) {
+      setLeftAndRightDisabled(true);
+      setTimeout(() => {
+        setHasTransitionClass(false);
+        setCurrent(stateSlides.length - 2);
+      }, transitionSpeed);
+    }
+
+    if (current === stateSlides.length - 2) {
+      setTimeout(() => {
+        setHasTransitionClass(true);
+      }, transitionSpeed);
+    }
+  }, [current]);
+
+  useEffect(() => {
+    if (leftAndRightDisabled) {
+      setTimeout(() => {
+        setLeftAndRightDisabled(false);
+      }, transitionSpeed * 2);
+    }
+  }, [leftAndRightDisabled]);
 
   function handleLeftArrow() {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-    console.log(current);
-    setButtonClicked(false);
-    setButtonClicked(true);
+    setCurrent(current - 1);
   }
 
   function handleRightArrow() {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-    console.log(current);
+    setCurrent(current + 1);
   }
 
-  function renderCarousel(children) {
-    let leftSideImageIndex = current === 0 ? length - 1 : current - 1;
-    let rightSideImageIndex = current === length - 1 ? 0 : current + 1;
-    return (
-      <>
-        <div className="imageDiv left-image">
-          {children.map((item, index) =>
-            leftSideImageIndex === index ? item : null
-          )}
-        </div>
-        <div className="imageDiv front-image">
-          {children.map((item, index) => (current === index ? item : null))}
-        </div>
-        <div
-          className={
-            isButtonClicked
-              ? "right-image imageDiv right-image-animation"
-              : "imageDiv right-image test"
-          }
-        >
-          {children.map((item, index) =>
-            rightSideImageIndex === index ? item : null
-          )}
-        </div>
-      </>
-    );
-  }
+  const calculateLeftMargin = () => {
+    return "-" + current * 332 + "px";
+  };
 
   // console.log(children);
   return (
     <div className="container">
-      <FaArrowCircleLeft className="arrow" onClick={handleLeftArrow} />
-      <div className="carousel">{renderCarousel(children)}</div>
-      <FaArrowCircleRight className="arrow" onClick={handleRightArrow} />
-      <div className="simple-div">Click Me</div>
+      <FaArrowCircleLeft
+        className={`arrow ${leftAndRightDisabled ? "disabled" : ""}`}
+        onClick={!leftAndRightDisabled ? handleLeftArrow : null}
+      />
+      <div className="inner-container">
+        <div
+          className={`carousel ${hasTransitionClass ? "transition" : ""}`}
+          style={{ left: calculateLeftMargin() }}
+        >
+          {stateSlides.map((item, index) => {
+            return (
+              <div key={index} className="imageDiv">
+                {item}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <FaArrowCircleRight
+        className={`arrow ${leftAndRightDisabled ? "disabled" : ""}`}
+        onClick={!leftAndRightDisabled ? handleRightArrow : null}
+      />
     </div>
   );
 }
