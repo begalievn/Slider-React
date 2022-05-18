@@ -4,34 +4,41 @@ import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 function CarouselSlider({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const length = children.length;
+  const [images, setImages] = useState([]);
 
-  // useEffect(() => {
-  //   if (children === undefined) {
-  //     return;
-  //   }
+  useEffect(() => {
+    let arrImages = [];
 
-  //   Array.isArray(children)
-  //     ? setImages([...children])
-  //     : setImages([...images, children]);
+    if (children === undefined) {
+      return;
+    }
 
-  //   for (let i = images.length; i < 6; i++) {
-  //     setImages((prevState) => [...prevState, ...prevState]);
-  //   }
-  // }, []);
+    Array.isArray(children)
+      ? (arrImages = [...children])
+      : (arrImages = [children]);
 
-  let leftIndex = activeIndex ? activeIndex - 1 : length - 1;
-  let rightIndex = activeIndex === length - 1 ? 0 : activeIndex + 1;
+    let i = 0;
+    while (arrImages.length < 6) {
+      arrImages.push(arrImages[i]);
+      i++;
+    }
+    setImages([...arrImages]);
+  }, [children]);
 
-  let hidedLeftIndex = leftIndex ? leftIndex - 1 : length - 1;
-  let hidedRightIndex = rightIndex === length - 1 ? 0 : rightIndex + 1;
+  console.log(images);
+
+  let leftIndex = activeIndex ? activeIndex - 1 : images.length - 1;
+  let rightIndex = activeIndex === images.length - 1 ? 0 : activeIndex + 1;
+
+  let hidedLeftIndex = leftIndex ? leftIndex - 1 : images.length - 1;
+  let hidedRightIndex = rightIndex === images.length - 1 ? 0 : rightIndex + 1;
 
   function next() {
-    setActiveIndex(activeIndex === length - 1 ? 0 : activeIndex + 1);
+    setActiveIndex(activeIndex === images.length - 1 ? 0 : activeIndex + 1);
   }
 
   function prev() {
-    setActiveIndex(activeIndex ? activeIndex - 1 : length - 1);
+    setActiveIndex(activeIndex ? activeIndex - 1 : images.length - 1);
   }
 
   console.log(
@@ -53,23 +60,23 @@ function CarouselSlider({ children }) {
             key={hidedLeftIndex}
             className={`imageDiv hidedLeft`}
           >
-            {children[hidedLeftIndex]}
+            {images[hidedLeftIndex]}
           </div>
           <div id="left" key={leftIndex} className={`imageDiv left`}>
-            {children[leftIndex]}
+            {images[leftIndex]}
           </div>
           <div id="active" key={activeIndex} className={`imageDiv active`}>
-            {children[activeIndex]}
+            {images[activeIndex]}
           </div>
           <div id="right" key={rightIndex} className={`imageDiv right`}>
-            {children[rightIndex]}
+            {images[rightIndex]}
           </div>
           <div
             id="hidedRight"
             key={hidedRightIndex}
             className={`imageDiv hidedRight`}
           >
-            {children[hidedRightIndex]}
+            {images[hidedRightIndex]}
           </div>
           {/* */}
         </div>
