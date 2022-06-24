@@ -44,12 +44,7 @@
 .inner-container {
   width: 996px;
   height: 500px;
-  background-color: antiquewhite;
   overflow: hidden;
-}
-
-.transition {
-  transition: all 1s;
 }
 
 .carousel {
@@ -62,9 +57,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(100, 234, 234);
   overflow: hidden;
   box-sizing: border-box;
+  user-select: none;
 }
 
 .imageDiv {
@@ -79,6 +74,7 @@
   width: 300px;
   height: 450px;
   transition: all, 0.4s;
+  user-select: none;
 }
 
 .hidedLeft {

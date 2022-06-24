@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
 
 function CarouselSlider({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -62,13 +62,23 @@ function CarouselSlider({ children }) {
           >
             {images[hidedLeftIndex]}
           </div>
-          <div id="left" key={leftIndex} className={`imageDiv left`}>
+          <div
+            id="left"
+            key={leftIndex}
+            className={`imageDiv left`}
+            onClick={prev}
+          >
             {images[leftIndex]}
           </div>
           <div id="active" key={activeIndex} className={`imageDiv active`}>
             {images[activeIndex]}
           </div>
-          <div id="right" key={rightIndex} className={`imageDiv right`}>
+          <div
+            id="right"
+            key={rightIndex}
+            className={`imageDiv right`}
+            onClick={next}
+          >
             {images[rightIndex]}
           </div>
           <div
