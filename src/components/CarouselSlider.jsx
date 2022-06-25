@@ -5,7 +5,6 @@ import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
 function CarouselSlider({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [images, setImages] = useState([]);
-
   useEffect(() => {
     let arrImages = [];
 
