@@ -11,6 +11,10 @@
   font-size: 2.5rem;
 }
 
+.arrow:hover {
+  cursor: pointer;
+}
+
 .arrow.disabled {
   opacity: 0.3;
 }
